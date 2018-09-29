@@ -20,7 +20,10 @@ my role Accountable:ver<0.0.1>:auth<cpan:ELIZABETH> {
     }
 }
 
-class AccountableBagHash is BagHash does Accountable { }
+class AccountableBagHash:ver<0.0.1>:auth<cpan:ELIZABETH>
+  is BagHash
+  does Accountable
+{ }
 
 =begin pod
 
