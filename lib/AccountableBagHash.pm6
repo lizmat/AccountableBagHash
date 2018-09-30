@@ -1,12 +1,12 @@
 use v6.c;
 
-my class X::BagHash::Accountable is Exception {
+class X::BagHash::Accountable is Exception {
     has $.key;
     has $.value;
     method message() { "Not allowed to set '{$!key}' to $!value" }
 }
 
-my role Accountable:ver<0.0.1>:auth<cpan:ELIZABETH> {
+my role Accountable {
     multi method AT-KEY(::?CLASS:D: $key is raw) is raw {
         my &nextone := nextcallee;
         Proxy.new(
@@ -20,7 +20,7 @@ my role Accountable:ver<0.0.1>:auth<cpan:ELIZABETH> {
     }
 }
 
-class AccountableBagHash:ver<0.0.1>:auth<cpan:ELIZABETH>
+class AccountableBagHash:ver<0.0.2>:auth<cpan:ELIZABETH>
   is BagHash
   does Accountable
 { }
@@ -33,11 +33,18 @@ AccountableBagHash - be an accountable BagHash
 
 =head1 SYNOPSIS
 
-  use AccountableBagHash;
+    use AccountableBagHash;
 
-  my %abh is AccountableBagHash = a => 42, b => 666;
-  %abh<a> =  5; # ok
-  %abh<a> = -1; # throws
+    my %abh is AccountableBagHash = a => 42, b => 666;
+    %abh<a> =  5; # ok
+    %abh<a> = -1; # throws
+  
+    CATCH {
+        when X::BagHash::Acountable {
+            say "You do not have enough {.key}";
+            .resume
+        }
+    }
 
 =head1 DESCRIPTION
 
@@ -46,6 +53,9 @@ instead of the normal C<BagHash>.  The only difference with a normal
 C<BagHash> is, is that if an attempt is made to set the value of a key to
 B<less than 0>, that then an exception is thrown rather than just deleting
 the key from the C<BagHash>.
+
+Also exports a C<X::BagHash::Acountable> error class that will be thrown
+if an attempt is made to set the value to below 0.
 
 =head1 AUTHOR
 

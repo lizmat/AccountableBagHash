@@ -13,11 +13,20 @@ SYNOPSIS
     my %abh is AccountableBagHash = a => 42, b => 666;
     %abh<a> =  5; # ok
     %abh<a> = -1; # throws
+      
+    CATCH {
+        when X::BagHash::Acountable {
+            say "You do not have enough {.key}";
+            .resume
+        }
+    }
 
 DESCRIPTION
 ===========
 
 This module makes an `AccountableBagHash` class available that can be used instead of the normal `BagHash`. The only difference with a normal `BagHash` is, is that if an attempt is made to set the value of a key to **less than 0**, that then an exception is thrown rather than just deleting the key from the `BagHash`.
+
+Also exports a `X::BagHash::Acountable` error class that will be thrown if an attempt is made to set the value to below 0.
 
 AUTHOR
 ======
