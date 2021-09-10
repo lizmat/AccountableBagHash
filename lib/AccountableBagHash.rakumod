@@ -20,12 +20,12 @@ my role Accountable {
     }
 }
 
-class AccountableBagHash:ver<0.0.3>:auth<cpan:ELIZABETH>
+class AccountableBagHash:ver<0.0.4>:auth<zef:lizmat>
   is BagHash
   does Accountable
 { }
 
-class AccountableMixHash:ver<0.0.3>:auth<cpan:ELIZABETH>
+class AccountableMixHash:ver<0.0.4>:auth<zef:lizmat>
   is MixHash
   does Accountable
 { }
@@ -69,14 +69,14 @@ if an attempt is made to set the value to below 0.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/AccountableBagHash .
 Comments and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2020 Elizabeth Mattijsen
+Copyright 2018, 2020, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

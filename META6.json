@@ -1,22 +1,26 @@
 {
-  "auth" : "cpan:ELIZABETH",
-  "authors" : [
+  "auth": "zef:lizmat",
+  "authors": [
     "Elizabeth Mattijsen"
   ],
-  "build-depends" : [ ],
-  "depends" : [ ],
-  "description" : "be an accountable BagHash / MixHash",
-  "license" : "Artistic-2.0",
-  "name" : "AccountableBagHash",
-  "perl" : "6.c",
-  "provides" : {
-    "AccountableBagHash" : "lib/AccountableBagHash.pm6"
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "be an accountable BagHash / MixHash",
+  "license": "Artistic-2.0",
+  "name": "AccountableBagHash",
+  "perl": "6.c",
+  "provides": {
+    "AccountableBagHash": "lib/AccountableBagHash.rakumod"
   },
-  "resources" : [ ],
-  "source-url" : "https://github.com/lizmat/AccountableBagHash.git",
-  "tags" : [
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/AccountableBagHash.git",
+  "tags": [
     "UTILS"
   ],
-  "test-depends" : [ ],
-  "version" : "0.0.3"
+  "test-depends": [
+  ],
+  "version": "0.0.4"
 }
