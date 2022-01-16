@@ -45,8 +45,8 @@ AccountableBagHash - be an accountable BagHash / MixHash
     %abh<a> = -1; # throws
 
     my %amh is AccountableMixHash = a => 3.14, b => 666;
-    %abh<a> =  6.28; # ok
-    %abh<a> = -1;    # throws
+    %amh<a> =  6.28; # ok
+    %amh<a> = -1;    # throws
   
     CATCH {
         when X::BagHash::Acountable {
