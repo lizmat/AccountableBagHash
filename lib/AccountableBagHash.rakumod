@@ -20,12 +20,12 @@ my role Accountable {
     }
 }
 
-class AccountableBagHash:ver<0.0.4>:auth<zef:lizmat>
+class AccountableBagHash:ver<0.0.5>:auth<zef:lizmat>
   is BagHash
   does Accountable
 { }
 
-class AccountableMixHash:ver<0.0.4>:auth<zef:lizmat>
+class AccountableMixHash:ver<0.0.5>:auth<zef:lizmat>
   is MixHash
   does Accountable
 { }
@@ -38,22 +38,26 @@ AccountableBagHash - be an accountable BagHash / MixHash
 
 =head1 SYNOPSIS
 
-    use AccountableBagHash;
+=begin code :lang<raku>
 
-    my %abh is AccountableBagHash = a => 42, b => 666;
-    %abh<a> =  5; # ok
-    %abh<a> = -1; # throws
+use AccountableBagHash;
 
-    my %amh is AccountableMixHash = a => 3.14, b => 666;
-    %amh<a> =  6.28; # ok
-    %amh<a> = -1;    # throws
-  
-    CATCH {
-        when X::BagHash::Acountable {
-            say "You do not have enough {.key}";
-            .resume
-        }
+my %abh is AccountableBagHash = a => 42, b => 666;
+%abh<a> =  5; # ok
+%abh<a> = -1; # throws
+
+my %amh is AccountableMixHash = a => 3.14, b => 666;
+%amh<a> =  6.28; # ok
+%amh<a> = -1;    # throws
+
+CATCH {
+    when X::BagHash::Acountable {
+        say "You do not have enough {.key}";
+        .resume
     }
+}
+
+=end code
 
 =head1 DESCRIPTION
 
@@ -76,7 +80,7 @@ Comments and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2020, 2021 Elizabeth Mattijsen
+Copyright 2018, 2020, 2021, 2022 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

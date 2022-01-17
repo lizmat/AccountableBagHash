@@ -8,22 +8,24 @@ AccountableBagHash - be an accountable BagHash / MixHash
 SYNOPSIS
 ========
 
-    use AccountableBagHash;
+```raku
+use AccountableBagHash;
 
-    my %abh is AccountableBagHash = a => 42, b => 666;
-    %abh<a> =  5; # ok
-    %abh<a> = -1; # throws
+my %abh is AccountableBagHash = a => 42, b => 666;
+%abh<a> =  5; # ok
+%abh<a> = -1; # throws
 
-    my %amh is AccountableMixHash = a => 3.14, b => 666;
-    %abh<a> =  6.28; # ok
-    %abh<a> = -1;    # throws
-      
-    CATCH {
-        when X::BagHash::Acountable {
-            say "You do not have enough {.key}";
-            .resume
-        }
+my %amh is AccountableMixHash = a => 3.14, b => 666;
+%amh<a> =  6.28; # ok
+%amh<a> = -1;    # throws
+
+CATCH {
+    when X::BagHash::Acountable {
+        say "You do not have enough {.key}";
+        .resume
     }
+}
+```
 
 DESCRIPTION
 ===========
@@ -42,7 +44,7 @@ Source can be located at: https://github.com/lizmat/AccountableBagHash . Comment
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018, 2020, 2021 Elizabeth Mattijsen
+Copyright 2018, 2020, 2021, 2022 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

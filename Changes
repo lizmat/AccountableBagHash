@@ -2,6 +2,10 @@ Revision history for AccountableBagHash
 
 {{$NEXT}}
 
+0.0.5  2022-01-17T18:02:22+01:00
+    - Fix documentation copy-pasto, MorayJ++
+    - Update copyright year
+
 0.0.4  2021-09-10T09:35:09+02:00
     - Change file extension to .rakumod
     - Migrate to zef ecosystem
