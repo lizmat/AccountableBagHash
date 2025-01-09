@@ -1,6 +1,8 @@
 Revision history for AccountableBagHash
 
 {{$NEXT}}
+
+0.0.6  2025-01-09T12:10:18+01:00
     - Add CI badge for each OS
     - Add sponsor link
     - Update copyright year
