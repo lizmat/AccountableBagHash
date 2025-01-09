@@ -1,5 +1,3 @@
-use v6.c;
-
 class X::BagHash::Accountable is Exception {
     has $.key;
     has $.value;
@@ -20,70 +18,8 @@ my role Accountable {
     }
 }
 
-class AccountableBagHash:ver<0.0.5>:auth<zef:lizmat>
-  is BagHash
-  does Accountable
-{ }
+class AccountableBagHash is BagHash does Accountable { }
 
-class AccountableMixHash:ver<0.0.5>:auth<zef:lizmat>
-  is MixHash
-  does Accountable
-{ }
-
-=begin pod
-
-=head1 NAME
-
-AccountableBagHash - be an accountable BagHash / MixHash
-
-=head1 SYNOPSIS
-
-=begin code :lang<raku>
-
-use AccountableBagHash;
-
-my %abh is AccountableBagHash = a => 42, b => 666;
-%abh<a> =  5; # ok
-%abh<a> = -1; # throws
-
-my %amh is AccountableMixHash = a => 3.14, b => 666;
-%amh<a> =  6.28; # ok
-%amh<a> = -1;    # throws
-
-CATCH {
-    when X::BagHash::Acountable {
-        say "You do not have enough {.key}";
-        .resume
-    }
-}
-
-=end code
-
-=head1 DESCRIPTION
-
-This module makes an C<AccountableBagHash> / C<AccountableMixHash> class
-available that can be used instead of the normal C<BagHash> / C<MixHash>.
-The only difference with a normal C<BagHash> / C<MixHash> is, is that if
-an attempt is made to set the value of a key to B<less than 0>, that an
-exception is thrown rather than just deleting the key from the C<BagHash>
-/ C<MixHash>.
-
-Also exports a C<X::BagHash::Accountable> error class that will be thrown
-if an attempt is made to set the value to below 0.
-
-=head1 AUTHOR
-
-Elizabeth Mattijsen <liz@raku.rocks>
-
-Source can be located at: https://github.com/lizmat/AccountableBagHash .
-Comments and Pull Requests are welcome.
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2018, 2020, 2021, 2022 Elizabeth Mattijsen
-
-This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
-
-=end pod
+class AccountableMixHash is MixHash does Accountable { }
 
 # vim: expandtab shiftwidth=4

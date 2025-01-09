@@ -1,6 +1,9 @@
 Revision history for AccountableBagHash
 
 {{$NEXT}}
+    - Add CI badge for each OS
+    - Add sponsor link
+    - Update copyright year
 
 0.0.5  2022-01-17T18:02:22+01:00
     - Fix documentation copy-pasto, MorayJ++
