@@ -44,7 +44,8 @@ is %amh<a>,          3.71, 'did the increment work';
     CATCH {
         $caught = True;
         when X::BagHash::Accountable {
-            pass 'threw the correct exception';
+            is .message, "Not allowed to set 'a' to -1",
+              'is the message correct';
             .resume;
         }
         default {

@@ -1,7 +1,11 @@
 Revision history for AccountableBagHash
 
 {{$NEXT}}
+
+0.0.7  2026-05-07T17:55:18+02:00
     - Fix breakage caused by the Great QuantHash Refactor
+    - Reached 100% test coverage
+    - Modernize META
     - Update copyright year
 
 0.0.6  2025-01-09T12:10:18+01:00

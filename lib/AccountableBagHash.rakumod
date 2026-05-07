@@ -1,17 +1,19 @@
 class X::BagHash::Accountable is Exception {
     has $.key;
     has $.value;
-    method message() { "Not allowed to set '{$!key}' to $!value" }
+    method message() {
+        "Not allowed to set '$!key' to $!value"
+    }
 }
 
-my role Accountable {
+my role Accountable {  # UNCOVERABLE
     multi method AT-KEY(::?CLASS:D: $key is raw) is raw {
         my &nextone := nextcallee;
         Proxy.new(
           FETCH => { nextone(self,$key) },
           STORE => -> $, Numeric() $value {
               $value >= 0
-                ?? (nextone(self,$key) = $value)
+                ?? (nextone(self,$key) = $value)  # UNCOVERABLE
                 !! X::BagHash::Accountable.new( :$key, :$value ).throw
           }
         )
