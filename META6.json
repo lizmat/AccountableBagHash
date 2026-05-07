@@ -10,15 +10,21 @@
   "description": "be an accountable BagHash / MixHash",
   "license": "Artistic-2.0",
   "name": "AccountableBagHash",
-  "perl": "6.c",
   "provides": {
     "AccountableBagHash": "lib/AccountableBagHash.rakumod"
   },
+  "raku": "6.c",
   "resources": [
   ],
   "source-url": "https://github.com/lizmat/AccountableBagHash.git",
+  "support": {
+    "bugtracker": "https://github.com/lizmat/AccountableBagHash/issues",
+    "email": "liz@raku.rocks",
+    "source": "https://github.com/lizmat/AccountableBagHash.git"
+  },
   "tags": [
-    "UTILS"
+    "UTILS",
+    "ACCOUNTABLE"
   ],
   "test-depends": [
   ],

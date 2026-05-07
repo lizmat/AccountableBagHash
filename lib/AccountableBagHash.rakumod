@@ -16,6 +16,11 @@ my role Accountable {
           }
         )
     }
+    multi method ASSIGN-KEY(::?CLASS:D: $key is raw, $value is raw) is raw {
+        $value > 0
+          ?? nextsame()
+          !! X::BagHash::Accountable.new( :$key, :$value ).throw
+    }
 }
 
 class AccountableBagHash is BagHash does Accountable { }

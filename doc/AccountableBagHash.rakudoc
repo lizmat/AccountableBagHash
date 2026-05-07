@@ -7,7 +7,6 @@ AccountableBagHash - be an accountable BagHash / MixHash
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
-
 use AccountableBagHash;
 
 my %abh is AccountableBagHash = a => 42, b => 666;
@@ -24,7 +23,6 @@ CATCH {
         .resume
     }
 }
-
 =end code
 
 =head1 DESCRIPTION
@@ -52,7 +50,7 @@ deal to me!
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2020, 2021, 2022, 2025 Elizabeth Mattijsen
+Copyright 2018, 2020, 2021, 2022, 2025, 2026 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
