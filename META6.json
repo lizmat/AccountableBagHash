@@ -16,11 +16,11 @@
   "raku": "6.c",
   "resources": [
   ],
-  "source-url": "https://github.com/lizmat/AccountableBagHash.git",
+  "source-url": "https://codeberg.org/lizmat/AccountableBagHash.git",
   "support": {
-    "bugtracker": "https://github.com/lizmat/AccountableBagHash/issues",
+    "bugtracker": "https://codeberg.org/lizmat/AccountableBagHash/issues",
     "email": "liz@raku.rocks",
-    "source": "https://github.com/lizmat/AccountableBagHash.git"
+    "source": "https://codeberg.org/lizmat/AccountableBagHash.git"
   },
   "tags": [
     "UTILS",

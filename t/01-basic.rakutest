@@ -1,9 +1,8 @@
-use v6.c;
 use Test;
 
 use AccountableBagHash;
 
-plan 16;
+plan 18;
 
 my %abh is AccountableBagHash = a => 42, b => 666;
 isa-ok %abh, AccountableBagHash;
@@ -58,4 +57,7 @@ is %amh<a>,          3.71, 'did the increment work';
     is %amh<a>, 3.71, 'did the assignment fail';
 }
 
-# vim: ft=perl6 expandtab sw=4
+is (%amh<a> = 0), 0, 'can we set to zero';
+is %amh<a>, 0, 'did the assignment work';
+
+# vim: expandtab shiftwidth=4

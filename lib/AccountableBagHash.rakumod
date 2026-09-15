@@ -19,7 +19,7 @@ my role Accountable {  # UNCOVERABLE
         )
     }
     multi method ASSIGN-KEY(::?CLASS:D: $key is raw, $value is raw) is raw {
-        $value > 0
+        $value >= 0
           ?? nextsame()
           !! X::BagHash::Accountable.new( :$key, :$value ).throw
     }

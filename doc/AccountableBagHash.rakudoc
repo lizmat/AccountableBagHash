@@ -41,7 +41,7 @@ if an attempt is made to set the value to below 0.
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
-Source can be located at: https://github.com/lizmat/AccountableBagHash .
+Source can be located at: https://codeberg.org/lizmat/AccountableBagHash .
 Comments and Pull Requests are welcome.
 
 If you like this module, or what I'm doing more generally, committing to a

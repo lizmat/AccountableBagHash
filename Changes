@@ -1,6 +1,8 @@
 Revision history for AccountableBagHash
 
 {{$NEXT}}
+    - Fix issue with ASSIGN-KEY not allowing 0
+    - Use modern test file extensions
 
 0.0.7  2026-05-07T17:55:18+02:00
     - Fix breakage caused by the Great QuantHash Refactor
